@@ -1,0 +1,113 @@
+@font-face {
+    font-family:'P22UndergroundCYPro-Book';
+    src: url('font/P22UndergroundCYPro-Book.otf');
+}
+
+@font-face {
+    font-family:'P22UndergroundCYPro-Demi';
+    src: url('font/P22UndergroundCYPro-Demi.otf');
+}
+
+@font-face {
+    font-family:'P22UndergroundCYPro-Heavy';
+    src: url('font/P22UndergroundCYPro-Heavy.otf');
+}
+
+@font-face {
+    font-family:'P22UndergroundCYPro-Light';
+    src: url('font/P22UndergroundCYPro-Light.otf');
+}
+
+@font-face {
+    font-family:'P22UndergroundCYPro-Medium';
+    src: url('font/P22UndergroundCYPro-Medium.otf');
+}
+
+@font-face {
+    font-family:'P22UndergroundCYPro-Thin';
+    src: url('font/P22UndergroundCYPro-Thin.otf');
+}
+
+body{
+	background-color:F0EFF4;
+}
+  #col1,#col3 {
+  background-color:white;
+    font-family: Verdana, Arial, sans-serif; 
+    font-weight: bold; 
+	font-size: 80%; 
+    color: white; 
+    width: 20%; 
+    padding: 5px;  
+    float: left;
+	height: 100vw;
+   }
+    #col2{
+	font-family: Verdana, Arial, sans-serif; 
+    font-weight: bold; 
+	font-size: 80%; 
+    background-color:#F0EFF5; 
+    width: 55%; 
+    padding: 5px;  
+    float: left;
+	height: 100%; 
+	} 
+   #col1, #col2, #col3 { 
+   font-family: "Times New Roman", Times, serif; 
+    font-size: 100%; 
+    font-weight: normal; 
+	color: black; 
+   }
+  .tr { 
+    clear: both;
+	height: 100%; 
+   }
+.vacancy{
+	width: 50vw;
+	height: 20vw;
+	background-color: white;
+	border-radius: 3vw;
+	margin: 2vw;
+}
+.vacancy_title{
+	color:#000000;
+	size: 5vw;
+	font-family: P22UndergroundCYPro-Light;
+	padding-top:3vw;
+	padding-left:4vw;
+}
+.vacancy_img{
+	padding-top: 1vw;
+	width: 50vw;
+	height: 10vw;
+}
+.logo{
+		
+}
+
+.new_vacancy{
+    text-decoration:none;
+    text-align:center; 
+    padding:1vw 1.5vw; 
+    border:solid 0.1vw black; 
+    border-radius: 1.5vw; 
+    color:black; 
+    background:white;
+    position:absolute;
+    top: 13.5vw;
+    width: 8vw;
+    height: 1.5vw;
+    left: 2vw;
+    font-family: P22UndergroundCYPro-Light;
+    font-size: 1vw;
+}
+.menu{
+	position:absolute;
+	top: 18.5vw;
+	color:black;
+	font-size: 1.5vw;
+	font-family:P22UndergroundCYPro-Demi;
+}
+.switch{
+
+}

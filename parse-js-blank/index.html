@@ -6,56 +6,63 @@
   <meta name="description" content="My Parse App">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
 </head>
 
 <body>
-  
-  <div id="main">
-    <h1>You're ready to use Parse!</h1>
 
-    <p>Read the documentation and start building your JavaScript app:</p>
-
-    <ul>
-      <li><a href="https://www.parse.com/docs/js_guide">Parse JavaScript Guide</a></li>
-      <li><a href="https://www.parse.com/docs/js">Parse JavaScript API Documentation</a></li>
-    </ul>
-
-    <div style="display:none" class="error">
-      Looks like there was a problem saving the test object. Make sure you've set your application ID and javascript key correctly in the call to <code>Parse.initialize</code> in this file.
+  <div class="tr">
+    <div id="col1">
+    	<img src="img/request.PNG" class="logo">
+        <a href="#" class="new_vacancy">Новая вакансия</a>
+        <ul class="menu">
+        	<li>Вакансии</li>
+            <li>Мои ответы</li>
+            <li>Как это работает</li>
+            <li>О проекте</li>
+        </ul>
     </div>
-
-    <div style="display:none" class="success">
-      <p>We've also just created your first object using the following code:</p>
-      
-        Everything is working properly.
+    <div id="col2">
     </div>
+    <div id="col3"></div>
   </div>
-
   <script type="text/javascript">
-    Parse.initialize("V10TgoAKTJ7B8H8YjJhgucaXdGiDeROgxACn6aA2", "1gGbFOhUUrgeVp7JkqLP4XkOc8mBWkrQCU1uKAi8");
+   // JavaScript Document
+
+ Parse.initialize("V10TgoAKTJ7B8H8YjJhgucaXdGiDeROgxACn6aA2", "1gGbFOhUUrgeVp7JkqLP4XkOc8mBWkrQCU1uKAi8");
  
     var Requests = Parse.Object.extend("Requests");
+	var vacancyField = document.getElementById("col2"); 
+	var vacancyDiv;
+	var text;
+	var newParagraph;
+	var image;
 	var query = new Parse.Query(Requests);
-    query.find({
+	query.find({
   success: function(results) {
 	results.forEach(function(entry) {
-    document.writeln(entry.get("title"));
-	document.writeln(entry.get("expire"));
+			vacancyDiv = document.createElement("div");
+			vacancyDiv.className = "vacancy";
+    		text = document.createTextNode(entry.get("title"));
+			newParagraph = document.createElement("p");
+			newParagraph.className = "vacancy_title";
+			newParagraph.appendChild(text);
+			image = document.createElement("img");
+			image.src = entry.get("image");
+			image.class = "vacancy_img";
+			vacancyDiv.appendChild(newParagraph);
+			vacancyDiv.appendChild(image);
+			vacancyField.appendChild(vacancyDiv);
 });
   },
 
   error: function(error) {
-    // error is an instance of Parse.Error.
-	 $(".error").show();
   }
 });
-	
+ 
   </script>
-  
-  
-</body>
+ </body>
 
 </html>
