@@ -66,25 +66,49 @@ body{
 	width: 50vw;
 	height: 20vw;
 	background-color: white;
-	border-radius: 3vw;
+	border-radius: 2vw;
 	margin: 2vw;
 }
 .vacancy_title{
 	color:#000000;
 	size: 5vw;
+	pading-top: 2vw;
 	font-family: P22UndergroundCYPro-Light;
-	padding-top:3vw;
 	padding-left:4vw;
+	margin:0;
 }
-.vacancy_img{
+.vacancy_image{
 	padding-top: 1vw;
-	width: 50vw;
-	height: 10vw;
+	width: 10;
+	height: 4;
 }
 .logo{
 		
 }
-
+.vacancy_reward{
+	color:#CC0033;
+	font-size:2.5vw;
+	font-family:P22UndergroundCYPro-Light;
+	padding-top:1.6vw;
+	padding-left:43vw;
+	margin:0;
+}
+.vacancy_salary{
+	position:absolute;
+	font-family:P22UndergroundCYPro-Demi;
+	font-size:1vw;
+	color:black;
+	padding-top:10vw;
+	padding-left:4vw;
+}
+.vacancy_company{
+	position:absolute;
+	font-family:P22UndergroundCYPro-Thin;
+	font-size:1vw;
+	color:#333333;
+	padding-top:10vw;
+	padding-left:16vw;
+}
 .new_vacancy{
     text-decoration:none;
     text-align:center; 
@@ -94,7 +118,7 @@ body{
     color:black; 
     background:white;
     position:absolute;
-    top: 13.5vw;
+    top: 14.5vw;
     width: 8vw;
     height: 1.5vw;
     left: 2vw;
@@ -107,7 +131,16 @@ body{
 	color:black;
 	font-size: 1.5vw;
 	font-family:P22UndergroundCYPro-Demi;
+	list-style-type:none;
 }
-.switch{
 
+.main_menu{
+	color:black;
+	font-family:P22UndergroundCYPro-Demi;
+	text-decoration: none;
+	padding-left: 0.5vw;
 }
+.main_menu:hover{
+	color:#C14249;
+}
+
