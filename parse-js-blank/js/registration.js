@@ -14,7 +14,7 @@ function signinCallback(authResult) {
         });
 
         getEmail();
-        $('#revokeButton').show().data('loggedInWith', 'g+').text('Sign Out');
+        $('#info').show().data('loggedInWith', 'g+').text('Sign Out');
         $('#signinButton').css('display', 'none');
 
     } else if (authResult[ 'error' ]) {
@@ -32,7 +32,7 @@ function disconnectUser(access_token) {
         contentType: "application/json",
         dataType: 'jsonp',
         success: function(nullResponse) {
-            $('#revokeButton').hide();
+            $('#info').hide();
             $('#signinButton').show();
             alert('This app has had its G+ access revoked');
         },
@@ -60,7 +60,7 @@ function getEmail() {
     });
 }
 
-$('#revokeButton').click(function() {
+$('#revoke').click(function() {
     if ($(this).data('loggedInWith') === 'g+') {
         disconnectUser(gapi.auth.getToken().access_token);
     }

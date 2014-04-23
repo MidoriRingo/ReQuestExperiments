@@ -143,6 +143,11 @@ body{
 .main_menu:hover{
     color:#C14249;
 }
+
+#profile .info{
+    display: none;
+}
+
 /** Google+ Button */
 #signinButton.demo {
     padding: 15px;
