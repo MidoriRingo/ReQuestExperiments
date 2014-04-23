@@ -29,85 +29,85 @@
 }
 
 body{
-	background-color:F0EFF4;
+    background-color:F0EFF4;
 }
-  #col1,#col3 {
-  background-color:white;
+#col1,#profile {
+    background-color:white;
     font-family: Verdana, Arial, sans-serif; 
     font-weight: bold; 
-	font-size: 80%; 
+    font-size: 80%; 
     color: white; 
     width: 20%; 
     padding: 5px;  
     float: left;
-	height: 100vw;
-   }
-    #col2{
-	font-family: Verdana, Arial, sans-serif; 
+    height: 100vw;
+}
+#main{
+    font-family: Verdana, Arial, sans-serif; 
     font-weight: bold; 
-	font-size: 80%; 
+    font-size: 80%; 
     background-color:#F0EFF5; 
     width: 55%; 
     padding: 5px;  
     float: left;
-	height: 100%; 
-	} 
-   #col1, #col2, #col3 { 
-   font-family: "Times New Roman", Times, serif; 
+    height: 100%; 
+} 
+#col1, #main, #profile { 
+    font-family: "Times New Roman", Times, serif; 
     font-size: 100%; 
     font-weight: normal; 
-	color: black; 
-   }
-  .tr { 
+    color: black; 
+}
+.tr { 
     clear: both;
-	height: 100%; 
-   }
+    height: 100%; 
+}
 .vacancy{
-	width: 50vw;
-	height: 20vw;
-	background-color: white;
-	border-radius: 2vw;
-	margin: 2vw;
+    width: 50vw;
+    height: 15vw;
+    background-color: white;
+    border-radius: 2vw;
+    margin: 2vw;
 }
 .vacancy_title{
-	color:#000000;
-	size: 5vw;
-	pading-top: 2vw;
-	font-family: P22UndergroundCYPro-Light;
-	padding-left:4vw;
-	margin:0;
+    color:#000000;
+    size: 5vw;
+    pading-top: 2vw;
+    font-family: P22UndergroundCYPro-Light;
+    padding-left:4vw;
+    margin:0;
 }
 .vacancy_image{
-	padding-top: 1vw;
-	width: 10;
-	height: 4;
+    padding-top: 1vw;
+    width: 10;
+    height: 4;
 }
 .logo{
-		
+
 }
 .vacancy_reward{
-	color:#CC0033;
-	font-size:2.5vw;
-	font-family:P22UndergroundCYPro-Light;
-	padding-top:1.6vw;
-	padding-left:43vw;
-	margin:0;
+    color:#CC0033;
+    font-size:2.5vw;
+    font-family:P22UndergroundCYPro-Light;
+    padding-top:1.6vw;
+    padding-left:43vw;
+    margin:0;
 }
 .vacancy_salary{
-	position:absolute;
-	font-family:P22UndergroundCYPro-Demi;
-	font-size:1vw;
-	color:black;
-	padding-top:10vw;
-	padding-left:4vw;
+    position:absolute;
+    font-family:P22UndergroundCYPro-Demi;
+    font-size:1vw;
+    color:black;
+    padding-top: 3vw;
+    padding-left:4vw;
 }
 .vacancy_company{
-	position:absolute;
-	font-family:P22UndergroundCYPro-Thin;
-	font-size:1vw;
-	color:#333333;
-	padding-top:10vw;
-	padding-left:16vw;
+    position:absolute;
+    font-family:P22UndergroundCYPro-Thin;
+    font-size:1vw;
+    color:#333333;
+    padding-top: 3vw;
+    padding-left:16vw;
 }
 .new_vacancy{
     text-decoration:none;
@@ -126,21 +126,43 @@ body{
     font-size: 1vw;
 }
 .menu{
-	position:absolute;
-	top: 18.5vw;
-	color:black;
-	font-size: 1.5vw;
-	font-family:P22UndergroundCYPro-Demi;
-	list-style-type:none;
+    position:absolute;
+    top: 18.5vw;
+    color:black;
+    font-size: 1.5vw;
+    font-family:P22UndergroundCYPro-Demi;
+    list-style-type:none;
 }
 
 .main_menu{
-	color:black;
-	font-family:P22UndergroundCYPro-Demi;
-	text-decoration: none;
-	padding-left: 0.5vw;
+    color:black;
+    font-family:P22UndergroundCYPro-Demi;
+    text-decoration: none;
+    padding-left: 0.5vw;
 }
 .main_menu:hover{
-	color:#C14249;
+    color:#C14249;
 }
-
+/** Google+ Button */
+#signinButton.demo {
+    padding: 15px;
+    margin: 60px;
+    cursor: pointer;
+    line-height: 20px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+}
+#signinButton.demo .icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url('../img/btn_icons_sprite.png') transparent 0 -40px no-repeat;
+}
+#signinButton.demo:hover {
+    background-color: #cc3732;
+    color: #fff;
+    border: #dd4b39;
+}
+#myBtn.demo:hover .icon {
+    background: url('../img/btn_icons_sprite.png') transparent 0 0px no-repeat;
+}
