@@ -62,6 +62,20 @@ body{
     clear: both;
     height: 100%; 
 }
+.new_vacancy{
+    text-align:center; 
+    padding: 1vw; 
+    border:solid 0.1vw black; 
+    border-radius: 1.5vw; 
+    color:black; 
+    background:white;
+    position:absolute;
+    top: 14.5vw;
+    width: 8vw;
+    left: 6vw;
+    font-family: P22UndergroundCYPro-Light;
+    font-size: 1vw;
+}
 .vacancy{
     width: 50vw;
     height: 15vw;
@@ -83,7 +97,7 @@ body{
     height: 4;
 }
 .logo{
-
+    margin-left: 2vw;
 }
 .vacancy_reward{
     color:#CC0033;
@@ -108,22 +122,6 @@ body{
     color:#333333;
     padding-top: 3vw;
     padding-left:16vw;
-}
-.new_vacancy{
-    text-decoration:none;
-    text-align:center; 
-    padding:1vw 1.5vw; 
-    border:solid 0.1vw black; 
-    border-radius: 1.5vw; 
-    color:black; 
-    background:white;
-    position:absolute;
-    top: 14.5vw;
-    width: 8vw;
-    height: 1.5vw;
-    left: 2vw;
-    font-family: P22UndergroundCYPro-Light;
-    font-size: 1vw;
 }
 .menu{
     position:absolute;
