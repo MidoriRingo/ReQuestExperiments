@@ -16,7 +16,7 @@ function signinCallback(authResult) {
         getEmail();
         $('#revokeButton').show().data('loggedInWith', 'g+').text('Sign Out');
         $('#signinButton').css('display', 'none');
-    
+
     } else if (authResult[ 'error' ]) {
         console.log('Sign-in state: ' + authResult[ 'error' ]);
     }
@@ -53,11 +53,9 @@ function getName() {
 
 function getEmail() {
     gapi.client.load('oauth2', 'v2', function() {
-        var request = gapi.client.oauth2.userinfo.get();
+        var request = gapi.client.oauth2.userinfo.get({'userId': 'me'});
         request.execute(function(resp) {
-            if (resp[ 'email' ]) {
-                $('#email').text('Email ' + resp[ 'email' ]);
-            }
+            $('#email').text('Email: ' + resp['email']);
         });
     });
 }
