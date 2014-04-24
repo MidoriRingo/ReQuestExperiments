@@ -32,7 +32,7 @@ query.find({
             rewardParagraph.className = "vacancy_reward";
             rewardParagraph.appendChild(reward);
             
-            salary = document.createTextNode("�� " + entry.get("salary") + " $");
+            salary = document.createTextNode("up to " + entry.get("salary") + " $");
             salaryParagraph = document.createElement("p");
             salaryParagraph.className = "vacancy_salary";
             salaryParagraph.appendChild(salary);
@@ -55,9 +55,17 @@ query.find({
         });
     },
     error: function(error) {
-        alert('Server error! Please, refresh page!')
+        alert('Server error! Please, refresh page!');
     }
 });
 
 
+    $(document).ready(function(){ 
+ 
+        $('#new_vacancy').click(function(){ 
+        $('#main').load('form1.html #form1 > *'); 
+ });
+ 
+});
 
+ 

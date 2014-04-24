@@ -3,53 +3,113 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function getFirstForm() {
-    /*var form = $("<form><form/>",
-     {
-     action: '/myaction',
-     id: 'first_form'
-     }
-     );
-     form.append($("<fiedset/>"));
-     
-     form.append(
-     $("<input/>",
-     {
-     type: 'text',
-     placeholder: 'Keywords',
-     name: 'keyword',
-     style: ''
-     })
-     );
-     
-     form.append(
-     $("<input/>",
-     {
-     type: 'submit',
-     value: 'Search',
-     style: 'width:30%'
-     }
-     )
-     );
-     */
-    return form;
+
+//function getFirstForm() {
+//    /*var form = $("<form><form/>",
+//     {
+//     action: '/myaction',
+//     id: 'first_form'
+//     }
+//     );
+//     form.append($("<fiedset/>"));
+//     
+//     form.append(
+//     $("<input/>",
+//     {
+//     type: 'text',
+//     placeholder: 'Keywords',
+//     name: 'keyword',
+//     style: ''
+//     })
+//     );
+//     
+//     form.append(
+//     $("<input/>",
+//     {
+//     type: 'submit',
+//     value: 'Search',
+//     style: 'width:30%'
+//     }
+//     )
+//     );
+//     */
+//    return form;
+//}
+//
+//$(document).ready(function() {
+//    $("#new_vacancy").click(function() {
+//        // кнопка сабмита на форме
+//        var form = getFirstForm();
+//        $('#main').append(form);
+//        console.log(form);
+//    });
+//
+//    $('#first_form').submit(function(e) {
+//        //e.preventDefault();
+//
+//        // здесь сабмитится форма, 2-ой способ
+//       // $('main').empty();
+//
+//        //иконка лоадинга, хорошо бы ее привязать по всему сайту $('#loader').html('<img src="../../images/ajax-loader.gif" />       Please wait...');
+//
+//    });
+//
+//});
+
+var vacancyName;
+    var companyName;
+    var description;
+    var demands;
+    var terms;
+    var salary;
+    var city;
+    var address;
+    var reward;
+    var expireDate;
+    
+   function getFirstData() {
+    vacancyName = document.getElementById("vacancyName").value;
+    companyName = document.getElementById("companyName").value;
+    description = document.getElementById("description").value;
+    demands = document.getElementById("demands").value;
+    terms = document.getElementById("terms").value;
+    salary = document.getElementById("salary").value;
+    city = document.getElementById("city").value;
+    address = document.getElementById("address").value;
+    alert(vacancyName + " " + address) ;
+    $('#main').load('form2.html #form2 > *');
 }
 
-$(document).ready(function() {
-    $("#new_vacancy").click(function() {
-        // кнопка сабмита на форме
-        var form = getFirstForm();
-        $('#main').append(form);
-    });
+ function getSecondData() {
+    reward = document.getElementById("reward").value;
+    expireDate = document.getElementById("expireDate").value;
+    alert(reward + " " + expireDate + " " + demands) ;
+    makeVacancy();
+}
 
-    $('#first_form').submit(function(e) {
-        e.preventDefault();
-
-        // здесь сабмитится форма, 2-ой способ
-        $('main').empty();
-
-        //иконка лоадинга, хорошо бы ее привязать по всему сайту $('#loader').html('<img src="../../images/ajax-loader.gif" />       Please wait...');
-
-    });
-
+function makeVacancy(){
+    Parse.initialize("V10TgoAKTJ7B8H8YjJhgucaXdGiDeROgxACn6aA2", "1gGbFOhUUrgeVp7JkqLP4XkOc8mBWkrQCU1uKAi8");
+    var Requests = Parse.Object.extend("Requests");
+    var request = new Requests();
+    
+    request.set("title", vacancyName);
+    request.set("expire", expireDate);
+    request.set("company", companyName);
+    request.set("reward", reward);
+    request.set("salary", salary);
+    request.set("demands", demands);
+    request.set("terms", terms);
+    request.set("company_address", address);
+    request.set("company_description", description);
+    request.save(null, {
+  success: function(request) {
+    // Execute any logic that should take place after the object is saved.
+    alert('New object created with objectId: ' + request.id);
+  },
+  error: function(request, error) {
+    // Execute any logic that should take place if the save fails.
+    // error is a Parse.Error with an error code and description.
+    alert('Failed to create new object, with error code: ' + error.description);
+  }
 });
+}

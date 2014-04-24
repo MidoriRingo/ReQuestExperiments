@@ -169,3 +169,6 @@ body{
 #myBtn.demo:hover .icon {
     background: url('../img/list/btn_icons_sprite.png') transparent 0 0px no-repeat;
 }
+.demanded{
+    color: #CC0033;
+}
