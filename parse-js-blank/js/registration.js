@@ -5,7 +5,8 @@
  */
 
 function signinCallback(authResult) {
-
+    $('#loader').html('<img src="../img/ajax-loader.gif" />       Пожалуйста, подождите. Идет загрузка Вашего профиля из Google+...');
+    
     if (authResult['access_token']) {
 
         gapi.auth.setToken(authResult);
@@ -20,6 +21,7 @@ function signinCallback(authResult) {
     } else if (authResult[ 'error' ]) {
         console.log('Sign-in state: ' + authResult[ 'error' ]);
     }
+    $('#loader').html();
 }
 
 function disconnectUser(access_token) {
