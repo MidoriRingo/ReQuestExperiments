@@ -79,6 +79,11 @@ $('#revoke').click(function() {
 });
 
 function userToParse() {
+    if (findUser() !== '') {
+        console.log("Authorised!");
+        return;
+    }
+
     var User = Parse.Object.extend("User");
     var Wallet = Parse.Object.extend("Wallet");
 
@@ -97,11 +102,11 @@ function userToParse() {
     user.save();
     wallet.save();
     console.log("SAVE!");
-    
-    
+
+
 }
 
-var uname, upic, uemail, counter = 0;
+var uname, upic, uemail, uid, counter = 0;
 $(document).ready(function() {
 
     $('#name').bind('contentchanged', function() {
@@ -109,7 +114,7 @@ $(document).ready(function() {
         setTimeout(function() {
             uname = String($('#name').text()).substring(5);
             console.log(uname);
-            
+
             agregateUserInfo();
         }, 3000);
     });
@@ -119,7 +124,7 @@ $(document).ready(function() {
         setTimeout(function() {
             upic = String($('#user_photo').prop('src'));
             console.log(upic);
-            
+
             agregateUserInfo();
         }, 3000);
     });
@@ -129,7 +134,7 @@ $(document).ready(function() {
         setTimeout(function() {
             uemail = String($('#email').text()).split(' ')[1];
             console.log(uemail);
-            
+
             agregateUserInfo();
         }, 3000);
     });
@@ -137,10 +142,31 @@ $(document).ready(function() {
     function agregateUserInfo() {
         counter++;
         console.log(counter);
-        
-        if (counter == 3) {
+
+        if (counter === 3) {
             counter = 0;
             userToParse();
         }
     }
 });
+
+function findUser() {
+    var User = Parse.Object.extend("User");
+    
+    var query = new Parse.Query(User);
+    query.equalTo("email", uemail);
+    
+    query.find({
+        success: function(results) {
+            // Do something with the returned Parse.Object values
+            var object = results[0];
+            uid = object.id;
+            
+            return true;
+        },
+        error: function(error) {
+            console.log("Error: " + error.code + " " + error.message);
+            return false;
+        }
+    });
+}
