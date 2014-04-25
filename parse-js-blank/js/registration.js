@@ -5,8 +5,8 @@
  */
 
 function signinCallback(authResult) {
-    $('#loader').html('<img src="../img/ajax-loader.gif" />       Пожалуйста, подождите. Идет загрузка Вашего профиля из Google+...');
-    
+    $('#loader').show();
+
     if (authResult['access_token']) {
 
         gapi.auth.setToken(authResult);
@@ -15,13 +15,18 @@ function signinCallback(authResult) {
         });
 
         getEmail();
-        $('#info').show().data('loggedInWith', 'g+').text('Sign Out');
+
+        $('.info').css("display", "block");
         $('#signinButton').css('display', 'none');
 
+        $('#email').trigger('contentchanged');
+        $('#name').trigger('contentchanged');
+        $('#pic').trigger('contentchanged');
     } else if (authResult[ 'error' ]) {
         console.log('Sign-in state: ' + authResult[ 'error' ]);
     }
-    $('#loader').html();
+
+    $('#loader').hide();
 }
 
 function disconnectUser(access_token) {
@@ -34,8 +39,6 @@ function disconnectUser(access_token) {
         contentType: "application/json",
         dataType: 'jsonp',
         success: function(nullResponse) {
-            $('#info').hide();
-            $('#signinButton').show();
             alert('This app has had its G+ access revoked');
         },
         error: function(e) {
@@ -49,7 +52,8 @@ function getName() {
     var request = gapi.client.plus.people.get({'userId': 'me'});
     request.execute(function(resp) {
         var username = String(resp.displayName).split(' ');
-        $('#name').text('User: ' + username[0] + ' ' + username[1]);
+        $('#name').text('Имя: ' + username[0] + ' ' + username[1]);
+        $('#pic').html('<img id="user_photo" src="' + resp['image']['url'] + '" />');
     });
 }
 
@@ -64,10 +68,79 @@ function getEmail() {
 }
 
 $('#revoke').click(function() {
-    if ($(this).data('loggedInWith') === 'g+') {
-        disconnectUser(gapi.auth.getToken().access_token);
-    }
 
-    $('#name').text('Name: ');
-    $('#email').text('Email: ');
+    $('#loader').show();
+    disconnectUser(gapi.auth.getToken().access_token);
+    $('#loader').hide();
+
+    $('.info').css("display", "none");
+    $('#signinButton').show();
+
+});
+
+function userToParse() {
+    var User = Parse.Object.extend("User");
+    var Wallet = Parse.Object.extend("Wallet");
+
+    // Create a new instance of that class.
+    var wallet = new Wallet();
+    wallet.set("total", 3);
+
+    var user = new User();
+
+    user.set("username", uname);
+    user.set("email", uemail);
+    user.set("avatar", upic);
+    user.set("password", "my-pass");
+    user.set("parent", wallet);
+
+    user.save();
+    wallet.save();
+    console.log("SAVE!");
+    
+    
+}
+
+var uname, upic, uemail, counter = 0;
+$(document).ready(function() {
+
+    $('#name').bind('contentchanged', function() {
+        // do something after the div content has changed
+        setTimeout(function() {
+            uname = String($('#name').text()).substring(5);
+            console.log(uname);
+            
+            agregateUserInfo();
+        }, 3000);
+    });
+
+    $('#pic').bind('contentchanged', function() {
+        // do something after the div content has changed
+        setTimeout(function() {
+            upic = String($('#user_photo').prop('src'));
+            console.log(upic);
+            
+            agregateUserInfo();
+        }, 3000);
+    });
+
+    $('#email').bind('contentchanged', function() {
+        // do something after the div content has changed
+        setTimeout(function() {
+            uemail = String($('#email').text()).split(' ')[1];
+            console.log(uemail);
+            
+            agregateUserInfo();
+        }, 3000);
+    });
+
+    function agregateUserInfo() {
+        counter++;
+        console.log(counter);
+        
+        if (counter == 3) {
+            counter = 0;
+            userToParse();
+        }
+    }
 });
