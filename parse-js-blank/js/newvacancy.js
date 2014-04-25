@@ -19,7 +19,7 @@ var expireDate;
 $(document).ready(function() {
 
     $('#new_vacancy').click(function() {
-        
+
         $('#main').empty();
         $('#main').load('form/new_vacancy_step1.html #vacancy_form1 > *');
     });
@@ -36,17 +36,19 @@ function getFirstData() {
     city = document.getElementById("city").value;
     address = document.getElementById("address").value;
 
-    alert(vacancyName + " " + address);
-    
+    console.log(vacancyName + "|" + demands + "|" + terms + "|"
+            + salary + "|" + city + "|" + address + "|" + companyName + "|" + description + "|" + u);
+
     $('#main').empty();
     $('#main').load('form/new_vacancy_step2.html #form2 > *');
 }
 
 function getSecondData() {
+
     reward = document.getElementById("reward").value;
     expireDate = document.getElementById("expireDate").value;
 
-    alert(reward + " " + expireDate + " " + demands);
+    console.log(reward + " " + expireDate);
     makeVacancy();
 }
 
@@ -57,24 +59,29 @@ function makeVacancy() {
     var request = new Requests();
 
     request.set("title", vacancyName);
-    request.set("expire", expireDate);
+    //request.set("expire", expireDate);
     request.set("company", companyName);
-    request.set("reward", reward);
+    request.set("reward", parseInt(reward));
     request.set("salary", salary);
     request.set("demands", demands);
     request.set("terms", terms);
+    request.set("city", city);
     request.set("company_address", address);
     request.set("company_description", description);
+    request.set("user", u);
 
     request.save(null, {
         success: function(request) {
             // Execute any logic that should take place after the object is saved.
-            alert('New object created with objectId: ' + request.id);
+            console.log('New object created with objectId: ' + request.id);
         },
         error: function(request, error) {
             // Execute any logic that should take place if the save fails.
             // error is a Parse.Error with an error code and description.
-            alert('Failed to create new object, with error code: ' + error.description);
+            console.log('Failed to create new object, with error code: ' + error.message);
+            console.log(error);
         }
     });
+    
+    //window.setTimeout('location.reload()', 3000);
 }

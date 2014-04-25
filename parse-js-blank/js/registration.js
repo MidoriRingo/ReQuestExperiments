@@ -103,10 +103,10 @@ function userToParse() {
     wallet.save();
     console.log("SAVE!");
 
-
+    findUser();
 }
 
-var uname, upic, uemail, uid, counter = 0;
+var uname, upic, uemail, u, counter = 0;
 $(document).ready(function() {
 
     $('#name').bind('contentchanged', function() {
@@ -160,7 +160,7 @@ function findUser() {
         success: function(results) {
             // Do something with the returned Parse.Object values
             var object = results[0];
-            uid = object.id;
+            u = object;
             
             return true;
         },
