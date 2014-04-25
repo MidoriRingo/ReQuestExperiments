@@ -52,6 +52,7 @@ function getName() {
 }
 
 function getEmail() {
+
     gapi.client.load('oauth2', 'v2', function() {
         var request = gapi.client.oauth2.userinfo.get({'userId': 'me'});
         request.execute(function(resp) {

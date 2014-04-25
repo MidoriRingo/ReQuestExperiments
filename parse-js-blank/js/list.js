@@ -60,12 +60,4 @@ query.find({
 });
 
 
-$(document).ready(function() {
-
-    $('#new_vacancy').click(function() {
-        $('#main').load('form/new_vacancy_step1.html #form1 > *');
-    });
-
-});
-
  

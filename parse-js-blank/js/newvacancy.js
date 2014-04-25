@@ -15,6 +15,17 @@ var address;
 var reward;
 var expireDate;
 
+
+$(document).ready(function() {
+
+    $('#new_vacancy').click(function() {
+        
+        $('#main').empty();
+        $('#main').load('form/new_vacancy_step1.html #vacancy_form1 > *');
+    });
+
+});
+
 function getFirstData() {
     vacancyName = document.getElementById("vacancyName").value;
     companyName = document.getElementById("companyName").value;
@@ -24,22 +35,24 @@ function getFirstData() {
     salary = document.getElementById("salary").value;
     city = document.getElementById("city").value;
     address = document.getElementById("address").value;
-    
+
     alert(vacancyName + " " + address);
+    
+    $('#main').empty();
     $('#main').load('form/new_vacancy_step2.html #form2 > *');
 }
 
 function getSecondData() {
     reward = document.getElementById("reward").value;
     expireDate = document.getElementById("expireDate").value;
-    
+
     alert(reward + " " + expireDate + " " + demands);
     makeVacancy();
 }
 
 function makeVacancy() {
     Parse.initialize("V10TgoAKTJ7B8H8YjJhgucaXdGiDeROgxACn6aA2", "1gGbFOhUUrgeVp7JkqLP4XkOc8mBWkrQCU1uKAi8");
-    
+
     var Requests = Parse.Object.extend("Requests");
     var request = new Requests();
 
@@ -52,7 +65,7 @@ function makeVacancy() {
     request.set("terms", terms);
     request.set("company_address", address);
     request.set("company_description", description);
-    
+
     request.save(null, {
         success: function(request) {
             // Execute any logic that should take place after the object is saved.
