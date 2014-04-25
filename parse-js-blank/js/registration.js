@@ -92,7 +92,7 @@ function userToParse() {
     user.set("email", uemail);
     user.set("avatar", upic);
     user.set("password", "my-pass");
-    user.set("parent", wallet);
+    user.set("wallet", wallet);
 
     user.save();
     wallet.save();

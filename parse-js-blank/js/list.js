@@ -9,8 +9,10 @@ Parse.initialize("V10TgoAKTJ7B8H8YjJhgucaXdGiDeROgxACn6aA2", "1gGbFOhUUrgeVp7Jkq
 var Requests = Parse.Object.extend("Requests");
 var vacancyField = document.getElementById("main");
 var vacancyDiv;
-var text, salary, reward, company;
-var newParagraph, rewardParagraph, salaryParagraph, companyParagraph;
+
+var text, salary, reward, company, linkText, vacancyId;
+var newParagraph, rewardParagraph, salaryParagraph, companyParagraph, vacancyLink, hiddenVacancy;
+
 var image;
 var imageDiv;
 var query = new Parse.Query(Requests);
@@ -32,15 +34,31 @@ query.find({
             rewardParagraph.className = "vacancy_reward";
             rewardParagraph.appendChild(reward);
 
-            salary = document.createTextNode("up to " + entry.get("salary") + " $");
+            if (entry.get("salary")){
+            salary = document.createTextNode(entry.get("salary") + " $");
+        }
+            else {
+                salary = document.createTextNode("");
+            }
             salaryParagraph = document.createElement("p");
             salaryParagraph.className = "vacancy_salary";
             salaryParagraph.appendChild(salary);
-
+            
+        
             company = document.createTextNode(entry.get("company"));
             companyParagraph = document.createElement("p");
             companyParagraph.className = "vacancy_company";
             companyParagraph.appendChild(company);
+//            
+//            hiddenVacancy = document.createElement('input');
+//            hiddenVacancy.value = entry.id + "";
+//            hiddenVacancy.className = "hiddenVacancy";
+                   
+//            vacancyLink = document.createElement('button');
+//            linkText = document.createTextNode("More info");
+//            vacancyLink.appendChild(linkText);
+//            vacancyLink.id = "details";
+           
 
 //			image = document.createElement("img");
 //			image.className = "vacancy_image";
@@ -51,6 +69,8 @@ query.find({
             vacancyDiv.appendChild(salaryParagraph);
             vacancyDiv.appendChild(companyParagraph);
 //            vacancyDiv.appendChild(image);
+  //          vacancyDiv.appendChild(hiddenVacancy);
+ //           vacancyDiv.appendChild(vacancyLink);
             vacancyField.appendChild(vacancyDiv);
         });
     },
@@ -60,4 +80,3 @@ query.find({
 });
 
 
- 

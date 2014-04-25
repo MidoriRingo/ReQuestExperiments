@@ -6,9 +6,9 @@
     </head>
     <body>
         <div id="vacancy_form1" >
-            <form id="form1" class="vacancy">
+            <form id="form1" class="new_vacancy_form1">
                 <fieldset style="border: 0; padding: 20px">
-                    <legend style="text-align: center; color: #CC0033;">Первый шаг создания вакансии</legend>
+                    <legend class="legend_new_vacancy">Первый шаг создания вакансии</legend>
 
                     <div style="padding:0.1em; margin:0.1em;">
                         <label for="vacancyName" class="demanded" style="float:left; margin-right:10px; padding:5px 0;"> Название вакансии*: </label>
@@ -64,12 +64,12 @@
                         <input style="float: right; width:60%;" type="text" name="address" id="address" value=""  placeholder="" />
                         <div style="clear: both"></div>
                     </div>
-                    
+
                     <input type="submit" value="Далее" id="new_vacancy_form1" style="float: right" onclick="getFirstData()"/>
                 </fieldset>
             </form>
         </div>
-        
+
         <script type="text/javascript" src="js/newvacancy.js"></script>
     </body>
 </html>
