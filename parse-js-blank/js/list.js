@@ -20,23 +20,23 @@ query.find({
         results.forEach(function(entry) {
             vacancyDiv = document.createElement("div");
             vacancyDiv.className = "vacancy";
-            
+
             text = document.createTextNode(entry.get("title"));
-            
+
             newParagraph = document.createElement("p");
             newParagraph.className = "vacancy_title";
             newParagraph.appendChild(text);
-            
+
             reward = document.createTextNode(entry.get("reward") + "$");
             rewardParagraph = document.createElement("p");
             rewardParagraph.className = "vacancy_reward";
             rewardParagraph.appendChild(reward);
-            
+
             salary = document.createTextNode("up to " + entry.get("salary") + " $");
             salaryParagraph = document.createElement("p");
             salaryParagraph.className = "vacancy_salary";
             salaryParagraph.appendChild(salary);
-            
+
             company = document.createTextNode(entry.get("company"));
             companyParagraph = document.createElement("p");
             companyParagraph.className = "vacancy_company";
@@ -45,7 +45,7 @@ query.find({
 //			image = document.createElement("img");
 //			image.className = "vacancy_image";
 //			image.src = entry.get("image").url();
-            
+
             vacancyDiv.appendChild(rewardParagraph);
             vacancyDiv.appendChild(newParagraph);
             vacancyDiv.appendChild(salaryParagraph);
@@ -60,12 +60,12 @@ query.find({
 });
 
 
-    $(document).ready(function(){ 
- 
-        $('#new_vacancy').click(function(){ 
-        $('#main').load('form1.html #form1 > *'); 
- });
- 
+$(document).ready(function() {
+
+    $('#new_vacancy').click(function() {
+        $('#main').load('form/new_vacancy_step1.html #form1 > *');
+    });
+
 });
 
  
