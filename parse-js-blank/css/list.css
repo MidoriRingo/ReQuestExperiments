@@ -1,35 +1,95 @@
 @font-face {
-    font-family:'P22UndergroundCYPro-Book';
-    src: url('font/P22UndergroundCYPro-Book.otf');
+    font-family:'HelveticaNeueCyr-Black';
+    src: url('font/HelveticaNeueCyr-Black.otf');
 }
 
 @font-face {
-    font-family:'P22UndergroundCYPro-Demi';
-    src: url('font/P22UndergroundCYPro-Demi.otf');
+    font-family:'HelveticaNeueCyr-BlackItalic';
+    src: url('font/HelveticaNeueCyr-BlackItalic.otf');
 }
 
 @font-face {
-    font-family:'P22UndergroundCYPro-Heavy';
-    src: url('font/P22UndergroundCYPro-Heavy.otf');
+    font-family:'HelveticaNeueCyr-Bold';
+    src: url('font/HelveticaNeueCyr-Bold.otf');
 }
 
 @font-face {
-    font-family:'P22UndergroundCYPro-Light';
-    src: url('font/P22UndergroundCYPro-Light.otf');
+    font-family:'HelveticaNeueCyr-BoldItalic';
+    src: url('font/HelveticaNeueCyr-BoldItalic.otf');
 }
 
 @font-face {
-    font-family:'P22UndergroundCYPro-Medium';
-    src: url('font/P22UndergroundCYPro-Medium.otf');
+    font-family:'HelveticaNeueCyr-Heavy';
+    src: url('font/HelveticaNeueCyr-Heavy.otf');
 }
 
 @font-face {
-    font-family:'P22UndergroundCYPro-Thin';
-    src: url('font/P22UndergroundCYPro-Thin.otf');
+    font-family:'HelveticaNeueCyr-HeavyItalic';
+    src: url('font/HelveticaNeueCyr-HeavyItalic.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-Italic';
+    src: url('font/HelveticaNeueCyr-Italic.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-Light';
+    src: url('font/HelveticaNeueCyr-Light.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-LightItalic';
+    src: url('font/HelveticaNeueCyr-LightItalic.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-Medium';
+    src: url('font/HelveticaNeueCyr-Medium.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-MediumItalic';
+    src: url('font/HelveticaNeueCyr-MediumItalic.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-Roman';
+    src: url('font/HelveticaNeueCyr-Roman.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-Thin';
+    src: url('font/HelveticaNeueCyr-Thin.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-ThinItalic';
+    src: url('font/HelveticaNeueCyr-ThinItalic.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-UltraLight';
+    src: url('font/HelveticaNeueCyr-UltraLight.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-UltraLightItalic';
+    src: url('font/HelveticaNeueCyr-UltraLightItalic.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-HeavyItalic';
+    src: url('font/HelveticaNeueCyr-HeavyItalic.otf');
+}
+
+@font-face {
+    font-family:'HelveticaNeueCyr-HeavyItalic';
+    src: url('font/HelveticaNeueCyr-HeavyItalic.otf');
 }
 
 body{
-    background-color:F0EFF4;
+    background-color:#F0EFF4;
 }
 #col1,#profile {
     background-color:white;
@@ -67,7 +127,7 @@ body{
     text-align:center; 
     padding: 1vw; 
     border:solid 0.1vw black; 
-    border-radius: 1.2vw; 
+    border-radius: 1.5vw; 
     color:black; 
     background:white;
     position:absolute;
@@ -77,6 +137,23 @@ body{
     font-family: P22UndergroundCYPro-Light;
     font-size: 1.3vw;
 }
+
+#mineVac{
+    text-align: center;
+    border: solid 0.1vw black;
+    border-radius: 0 0 0 2vw;
+    top: 30.5vw;
+    left: 3vw;
+    color: red;
+    width: 5vw;
+    height: 3vw;
+    position: absolute;
+}
+
+#allVac{}
+
+.listVacancy{}
+
 .vacancy{
     width: 50vw;
     height: 15vw;
