@@ -67,15 +67,15 @@ body{
     text-align:center; 
     padding: 1vw; 
     border:solid 0.1vw black; 
-    border-radius: 1.5vw; 
+    border-radius: 1.2vw; 
     color:black; 
     background:white;
     position:absolute;
     top: 14.5vw;
-    width: 8vw;
-    left: 6vw;
+    width: 14vw;
+    left: 3vw;
     font-family: P22UndergroundCYPro-Light;
-    font-size: 1vw;
+    font-size: 1.3vw;
 }
 .vacancy{
     width: 50vw;
