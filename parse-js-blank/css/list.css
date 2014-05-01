@@ -89,7 +89,7 @@
 }
 
 body{
-    background-color:#F0EFF4;
+    background-color:F0EFF4;
 }
 #col1,#profile {
     background-color:white;
@@ -134,25 +134,50 @@ body{
     top: 14.5vw;
     width: 14vw;
     left: 3vw;
-    font-family: P22UndergroundCYPro-Light;
+    font-family: HelveticaNeueCyr-Light;
     font-size: 1.3vw;
+}
+
+
+#allVac{
+    text-align: center;
+    border: solid 0.1vw black;
+    border-radius: 1.5vw 0 0 1.5vw;
+    width: 5.5vw;
+    height: 3vw;
+    position: absolute;
+    top: 30.5vw;
+    left: 3vw;    
+    float: left;
+    text-align: center;
 }
 
 #mineVac{
     text-align: center;
     border: solid 0.1vw black;
-    border-radius: 0 0 0 2vw;
-    top: 30.5vw;
-    left: 3vw;
-    color: red;
-    width: 5vw;
+    border-radius: 0 1.5vw 1.5vw 0;
+    width: 5.5vw;
     height: 3vw;
+    float: left;
+    top: 30.5vw;
+    left: 8.5vw;
     position: absolute;
+    text-align: center;
 }
 
-#allVac{}
+.checkedVac{
+    color: white;
+    background-color: darkgrey;
+    font-size: 1vw;
+    font-family: HelveticaNeueCyr-Light;
+}
 
-.listVacancy{}
+.uncheckedVac{
+    color: darkgray;
+    background-color: lightgray;
+    font-size: 1vw;
+    font-family: HelveticaNeueCyr-Light;
+}
 
 .vacancy{
     width: 50vw;
@@ -165,7 +190,7 @@ body{
     color:#000000;
     size: 5vw;
     pading-top: 2vw;
-    font-family: P22UndergroundCYPro-Light;
+    font-family: HelveticaNeueCyr-Light;
     padding-left:4vw;
     margin:0;
 }
@@ -180,7 +205,7 @@ body{
 .vacancy_reward{
     color:#CC0033;
     font-size:2.5vw;
-    font-family:P22UndergroundCYPro-Light;
+    font-family:HelveticaNeueCyr-Light;
     padding-top:1.6vw;
     padding-left:43vw;
     margin:0;
