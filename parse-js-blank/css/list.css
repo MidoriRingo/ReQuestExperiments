@@ -142,44 +142,37 @@ body{
     border-color: #CC0033;
 }
 
-#allVac{
+#allVac, #mineVac{
     text-align: center;
     border: solid 0.1vw black;
-    border-radius: 1.5vw 0 0 1.5vw;
     width: 5.5vw;
     height: 3vw;
     position: absolute;
-    top: 30.5vw;
-    left: 3vw;    
     float: left;
     text-align: center;
+    font-size: 1.5vw;
+    padding-top: 0.9vw;
+}
+#allVac{
+    border-radius: 1.5vw 0 0 1.5vw;
+    top: 30.5vw;
+    left: 3vw;    
 }
 
 #mineVac{
-    text-align: center;
-    border: solid 0.1vw black;
-    border-radius: 0 1.5vw 1.5vw 0;
-    width: 5.5vw;
-    height: 3vw;
-    float: left;
+    border-radius: 0 1.5vw 1.5vw 0;   
     top: 30.5vw;
     left: 8.5vw;
-    position: absolute;
-    text-align: center;
 }
 
 .checkedVac{
     color: white;
     background-color: darkgrey;
-    font-size: 1vw;
-    font-family: HelveticaNeueCyr-Light;
 }
 
 .uncheckedVac{
     color: darkgray;
     background-color: lightgray;
-    font-size: 1vw;
-    font-family: HelveticaNeueCyr-Light;
 }
 
 .vacancy{
