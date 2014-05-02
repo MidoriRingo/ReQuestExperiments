@@ -137,7 +137,10 @@ body{
     font-family: HelveticaNeueCyr-Light;
     font-size: 1.3vw;
 }
-
+.new_vacancy:hover{
+    color:#CC0033;
+    border-color: #CC0033;
+}
 
 #allVac{
     text-align: center;
@@ -189,16 +192,12 @@ body{
 .vacancy_title{
     color:#000000;
     size: 5vw;
-    pading-top: 2vw;
+    padding-top: 2vw;
     font-family: HelveticaNeueCyr-Light;
     padding-left:4vw;
     margin:0;
 }
-.vacancy_image{
-    padding-top: 1vw;
-    width: 10;
-    height: 4;
-}
+
 .logo{
     margin-left: 2vw;
 }
@@ -212,7 +211,7 @@ body{
 }
 .vacancy_salary{
     position:absolute;
-    font-family:P22UndergroundCYPro-Demi;
+    font-family:HelveticaNeueCyr-Light;
     font-size:1vw;
     color:black;
     padding-top: 3vw;
@@ -220,7 +219,7 @@ body{
 }
 .vacancy_company{
     position:absolute;
-    font-family:P22UndergroundCYPro-Thin;
+    font-family:HelveticaNeueCyr-UltraLight;
     font-size:1vw;
     color:#333333;
     padding-top: 3vw;
@@ -231,13 +230,13 @@ body{
     top: 18.5vw;
     color:black;
     font-size: 1.5vw;
-    font-family:P22UndergroundCYPro-Demi;
+    font-family:HelveticaNeueCyr-Medium;
     list-style-type:none;
 }
 
 .main_menu{
     color:black;
-    font-family:P22UndergroundCYPro-Demi;
+    font-family:HelveticaNeueCyr-Medium;
     text-decoration: none;
     padding-left: 0.5vw;
 }
@@ -281,7 +280,7 @@ body{
 .vacancy_link{
     color:#CC0033;
     font-size:1.5vw;
-    font-family:P22UndergroundCYPro-Light;
+    font-family:HelveticaNeueCyr-Light;
     margin:0;
     border: none;
     text-decoration: none;
@@ -293,7 +292,7 @@ body{
 }
 
 .legend_new_vacancy{
-    text-align: center; font-size: 2vw; color: #CC0033; font-family: P22UndergroundCYPro-Demi; 
+    text-align: center; font-size: 2vw; color: #CC0033; font-family: HelveticaNeueCyr-Medium; 
     margin-top: 1vw;
 }
 
