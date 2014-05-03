@@ -50,7 +50,7 @@
             </ul>
    
                 <div id="allVac" class="checkedVac">Общие</div>
-                <div id="mineVac" class="uncheckedVac">Мои</div>
+                <div id="mineVac">Мои</div>
         </div>
 
         <div id="loader">
@@ -61,10 +61,12 @@
         </div>
 
         <div id="profile">
+            <!--cliendID for real app 1086221773321-al6rupr58qg1thp64gk4vj7tgmiva34h.apps.googleusercontent.com -->
             <span id="signinButton"
                   class="demo g-signin"
                   data-callback="signinCallback"
-                  data-clientid="1086221773321-al6rupr58qg1thp64gk4vj7tgmiva34h.apps.googleusercontent.com"
+                  data-clientid="258190947811-dufjml4def7rv7epuqeb8iq2svtgt6t6.apps.googleusercontent.com"
+                  
                   data-cookiepolicy="single_host_origin"
                   data-requestvisibleactions="http://schemas.google.com/AddActivity"
                   data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email">
@@ -75,9 +77,11 @@
             <div class="info">
                 <div id="pic"></div>
                 
-                <p id="name">Имя:</p>
+                <p id="name"></p>
 
-                <p id="email">Email:</p>
+                <p id="email"></p>
+                
+                <button id="userDetails">Мой профиль</button>
                 
                 <!--button class="btn btn-classic">Профиль</button-->
                 <button class="btn btn-classic" id="revoke">Выйти</button>

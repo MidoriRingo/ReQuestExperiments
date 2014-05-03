@@ -144,14 +144,16 @@ body{
 
 #allVac, #mineVac{
     text-align: center;
-    border: solid 0.1vw black;
-    width: 5.5vw;
-    height: 3vw;
+    border: solid 0.1vw #dcdcdc;
+    width: 6vw;
+    height: 2.5vw;
     position: absolute;
     float: left;
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     padding-top: 0.9vw;
+    color: black;
+    font-family: HelveticaNeueCyr-Light;
 }
 #allVac{
     border-radius: 1.5vw 0 0 1.5vw;
@@ -162,18 +164,14 @@ body{
 #mineVac{
     border-radius: 0 1.5vw 1.5vw 0;   
     top: 30.5vw;
-    left: 8.5vw;
+    left: 9vw;
 }
 
 .checkedVac{
-    color: white;
-    background-color: darkgrey;
+    background-color: #F0EFF5;
+    
 }
 
-.uncheckedVac{
-    color: darkgray;
-    background-color: lightgray;
-}
 
 .vacancy{
     width: 50vw;
@@ -302,4 +300,44 @@ body{
     background-color: white;
     border-radius: 2vw;
     margin: 2vw;   
+}
+
+.info{
+    top: 3vw;
+    left: 80vw;
+    position: absolute;
+    text-align: center;
+}
+
+#pic{
+    position: relative;
+}
+
+#name{
+    font-family: HelveticaNeueCyr-Medium;
+    color: #CC0033;
+}
+
+#email{
+    font-family: HelveticaNeueCyr-Light;
+    font-size: 1vw;
+    color: black;
+}
+
+#userDetails{
+    text-align:center; 
+    padding: 1vw; 
+    border:solid 0.1vw black; 
+    border-radius: 1.5vw; 
+    color:black; 
+    background:white;
+    position:relative;
+    width: 10vw;
+    font-family: HelveticaNeueCyr-Light;
+    font-size: 1vw;
+}
+
+#userDetails:hover{
+     border:solid 0.1vw #CC0033;
+     color: #CC0033;
 }
