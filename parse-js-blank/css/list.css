@@ -311,6 +311,18 @@ body{
 
 #pic{
     position: relative;
+    margin-left: 3vw; 
+    background: #fff;
+    width: 8vw; /* ширина */
+    height: 8vw; /* высота */
+    border-radius: 50%;
+}
+#pic img{
+    display: block;
+    width: 100%;
+    border: 0;
+    margin: 0;
+    border-radius: 50%;
 }
 
 #name{
