@@ -52,7 +52,7 @@ function getName() {
     var request = gapi.client.plus.people.get({'userId': 'me'});
     request.execute(function(resp) {
         var username = String(resp.displayName).split(' ');
-        $('#name').text('Имя: ' + username[0] + ' ' + username[1]);
+        $('#name').text(username[0] + ' ' + username[1]);
         $('#pic').html('<img id="user_photo" src="' + resp['image']['url'] + '" />');
     });
 }
@@ -62,7 +62,7 @@ function getEmail() {
     gapi.client.load('oauth2', 'v2', function() {
         var request = gapi.client.oauth2.userinfo.get({'userId': 'me'});
         request.execute(function(resp) {
-            $('#email').text('Email: ' + resp['email']);
+            $('#email').text(resp['email']);
         });
     });
 }

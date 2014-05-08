@@ -37,10 +37,15 @@ function getFirstData() {
     address = document.getElementById("address").value;
 
     console.log(vacancyName + "|" + demands + "|" + terms + "|"
-            + salary + "|" + city + "|" + address + "|" + companyName + "|" + description + "|" + u);
+            + salary + "|" + city + "|" + address + "|" + companyName + "|" + description + "|");
 
-    $('#main').empty();
-    $('#main').load('form/new_vacancy_step2.html #form2 > *');
+//    if (trim(vacancyName) === null || trim(vacancyName) === "" || trim(description) === null || trim(description) === "") {
+//        alert("There were not atl the required fields filled.");
+//    }
+//    else {
+        $('#main').empty();
+        $('#main').load('form/new_vacancy_step2.html #form2 > *');
+ //   }
 }
 
 function getSecondData() {
@@ -82,6 +87,6 @@ function makeVacancy() {
             console.log(error);
         }
     });
-    
+
     //window.setTimeout('location.reload()', 3000);
 }

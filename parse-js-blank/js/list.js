@@ -81,3 +81,4 @@ query.find({
         alert('Server error! Please, refresh page!');
     }
 });
+
