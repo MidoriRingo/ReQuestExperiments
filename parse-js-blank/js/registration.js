@@ -152,16 +152,16 @@ $(document).ready(function() {
 
 function findUser() {
     var User = Parse.Object.extend("User");
-    
+
     var query = new Parse.Query(User);
     query.equalTo("email", uemail);
-    
+
     query.find({
         success: function(results) {
             // Do something with the returned Parse.Object values
             var object = results[0];
             u = object;
-            
+
             return true;
         },
         error: function(error) {

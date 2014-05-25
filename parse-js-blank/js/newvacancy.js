@@ -43,9 +43,9 @@ function getFirstData() {
 //        alert("There were not atl the required fields filled.");
 //    }
 //    else {
-        $('#main').empty();
-        $('#main').load('form/new_vacancy_step2.html #form2 > *');
- //   }
+    $('#main').empty();
+    $('#main').load('form/new_vacancy_step2.html #form2 > *');
+    //   }
 }
 
 function getSecondData() {

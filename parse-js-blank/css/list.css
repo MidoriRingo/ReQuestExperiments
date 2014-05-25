@@ -169,7 +169,7 @@ body{
 
 .checkedVac{
     background-color: #F0EFF5;
-    
+
 }
 
 
@@ -313,8 +313,8 @@ body{
     position: relative;
     margin-left: 3vw; 
     background: #fff;
-    width: 8vw; /* ширина */
-    height: 8vw; /* высота */
+    width: 8vw; /* ������ */
+    height: 8vw; /* ������ */
     border-radius: 50%;
 }
 #pic img{
@@ -350,6 +350,6 @@ body{
 }
 
 #userDetails:hover{
-     border:solid 0.1vw #CC0033;
-     color: #CC0033;
+    border:solid 0.1vw #CC0033;
+    color: #CC0033;
 }

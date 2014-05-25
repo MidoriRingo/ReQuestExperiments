@@ -47,7 +47,7 @@ function showDetails() {
 
 }
 
-function getRespondForm(){
+function getRespondForm() {
     $('#main').empty();
     $('#main').load('form/new_respond.html #respond_form > *');
 
